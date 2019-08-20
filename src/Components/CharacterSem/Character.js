@@ -1,22 +1,8 @@
 import React from "react";
 import { Header, Icon, Grid, Segment, Container } from "semantic-ui-react";
-import AbilityScores from "./AbilityScores";
+import CharacterTab from "./CharacterTab";
 import CharacterStats from "./CharacterStats";
 import { Becky } from "../Resource/becky";
-
-const grid = (
-  <Grid columns={3} divided>
-    <Grid.Row stretched>
-      <Grid.Column>
-        <Segment> 1 </Segment>
-      </Grid.Column>
-      <Grid.Column>
-        <Segment> 1 </Segment>
-        <Segment> 2 </Segment>
-      </Grid.Column>
-    </Grid.Row>
-  </Grid>
-);
 
 function Character() {
   const character = Becky;
@@ -31,17 +17,20 @@ function Character() {
       </Header>
       <Grid>
         <Grid.Row>
-          <Grid.Column width={3}>
+          <Grid.Column width={6}>
             <Segment>
-              <AbilityScores stats={character.ability_score} />
+              <CharacterTab stats={character.ability_score} />
             </Segment>
           </Grid.Column>
           <Grid.Column width={9}>
             <Segment>
               <CharacterStats hp={character.hp} ac={character.ac} />
             </Segment>
-            <Segment> 2 </Segment>
+            <Segment> Equipment </Segment>
           </Grid.Column>
+          {/* <Grid.Column width={3}>
+            <Segment> Background </Segment>
+          </Grid.Column> */}
         </Grid.Row>
       </Grid>
     </Container>

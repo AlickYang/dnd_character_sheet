@@ -1,14 +1,57 @@
-import React, { Fragment } from "react";
-import { List, Progress } from "semantic-ui-react";
+import React, { Fragment, useState } from "react";
+import { List, Progress, Button, Image } from "semantic-ui-react";
+import CombatIcon from "../Icons/hitPointsIcons/combat.png";
+import HealIcon from "../Icons/hitPointsIcons/heal.png";
 function HitPoints({ currentHealth, maxHP, ac }) {
-  const healthDisplay = `${currentHealth}/${maxHP}`;
-  const percentageHealth = (currentHealth / maxHP) * 100;
-  let percentage;
-  if (percentageHealth >= 100) {
-    percentage = 100;
-  } else {
-    percentage = percentageHealth;
+  const [hitPoints, setHitPoints] = useState(currentHealth);
+
+  function incrementHealth() {
+    setHitPoints(hitPoints + 1);
   }
+  function decrementHealth() {
+    hitPoints === 0 ? (hitPoints = 0) : setHitPoints(hitPoints - 1);
+  }
+
+  const buttons = (
+    <Fragment>
+      <Button size="mini" style={{ marginLeft: "3px", padding: "4px" }}>
+        <Image
+          src={CombatIcon}
+          size="mini"
+          onClick={decrementHealth}
+          style={{ width: "20px", height: "20px" }}
+        />
+      </Button>
+      <Button size="mini" style={{ marginLeft: "3px", padding: "4px" }}>
+        <Image
+          src={HealIcon}
+          size="mini"
+          onClick={incrementHealth}
+          style={{ width: "20px", height: "20px" }}
+        />
+      </Button>
+    </Fragment>
+  );
+
+  const healthDisplay = (
+    <p
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      {`${hitPoints}/${maxHP}`}
+    </p>
+  );
+
+  const percentageHealth = (hitPoints / maxHP) * 100;
+  let percentage;
+  //Change percentage for the progress bar
+  percentageHealth >= 100
+    ? (percentage = 100)
+    : (percentage = percentageHealth);
+
   return (
     <Fragment>
       <List horizontal>

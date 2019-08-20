@@ -21,13 +21,16 @@ function AbilityScoreCard({ name, level, icon, bonuses }) {
     <List.Item style={{ marginLeft: 0, marginRight: 15 }}>
       <Image avatar src={icon} style={{ width: "30px", height: "30px" }} />
       <List.Content>
-        {/* <img src={icon} alt={name} style={{ width: "30px", height: "30px" }} /> */}
         <List.Header>
-          <Popup
-            content={bonusList}
-            trigger={<p>{name}</p>}
-            position="right center"
-          />
+          {bonuses.length === 0 ? (
+            <p>{name}</p>
+          ) : (
+            <Popup
+              content={bonusList}
+              trigger={<p>{name}</p>}
+              position="right center"
+            />
+          )}
         </List.Header>
         <List.Description>
           {level}

@@ -1,5 +1,6 @@
 import React from "react";
 import HitPoints from "./HitPoints";
+import Skills from "./Skills";
 import { Container, Header } from "semantic-ui-react";
 function CharacterStats({ hp, ac }) {
   return (
@@ -8,10 +9,8 @@ function CharacterStats({ hp, ac }) {
       <div>
         <HitPoints ac={ac.amount} currentHealth={hp.current} maxHP={hp.max} />
       </div>
-      <h3> Skills </h3>
-      <div className="row">
-        <div className="col"> asddas </div>
-      </div>
+      <Header ac="h3"> Skills </Header>
+      <div className="row">Place Holder </div>
     </Container>
   );
 }

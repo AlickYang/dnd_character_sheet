@@ -1,11 +1,11 @@
 import React from "react";
 import AbilityScoreCard from "./AbilityScoreCard";
-import { Container, List } from "semantic-ui-react";
+import { Container, List, Header } from "semantic-ui-react";
 
 function AbilityScores({ stats }) {
   return (
     <Container>
-      <h3> Ability Scores </h3>
+      <Header ac="h3"> Ability Score </Header>
       <List>
         {stats.map(stat => (
           <AbilityScoreCard
