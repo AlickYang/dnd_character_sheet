@@ -1,14 +1,15 @@
-import StrengthIcon from "../Icons/abilityIcons/strength.png";
-import DexterityIcon from "../Icons/abilityIcons/dexterity.png";
-import IntelligenceIcon from "../Icons/abilityIcons/intelligence.png";
-import WisdomIcon from "../Icons/abilityIcons/wisdom.png";
-import ConstitutionIcon from "../Icons/abilityIcons/constitution.png";
-import CharismaIcon from "../Icons/abilityIcons/charisma.png";
-import HitPointsIcon from "../Icons/statIcons/hitpoints.png";
-import HitDiceIcon from "../Icons/statIcons/hit_dice.png";
-import ArmourClassIcon from "../Icons/statIcons/armour_class.png";
+import React, { useState, createContext } from "react";
+import StrengthIcon from "../Components/Icons/abilityIcons/strength.png";
+import DexterityIcon from "../Components/Icons/abilityIcons/dexterity.png";
+import IntelligenceIcon from "../Components/Icons/abilityIcons/intelligence.png";
+import WisdomIcon from "../Components/Icons/abilityIcons/wisdom.png";
+import ConstitutionIcon from "../Components/Icons/abilityIcons/constitution.png";
+import CharismaIcon from "../Components/Icons/abilityIcons/charisma.png";
+import HitPointsIcon from "../Components/Icons/statIcons/hitpoints.png";
+import HitDiceIcon from "../Components/Icons/statIcons/hit_dice.png";
+import ArmourClassIcon from "../Components/Icons/statIcons/armour_class.png";
 
-export const Becky = {
+const CharacterInfo = {
   name: "Becky",
   race: "Aasimar",
   class: {
@@ -17,7 +18,12 @@ export const Becky = {
   },
   level: 5,
   ability_score: [
-    { name: "Strength", level: 11, icon: StrengthIcon, bonuses: ["Athletics"] },
+    {
+      name: "Strength",
+      level: 11,
+      icon: StrengthIcon,
+      bonuses: ["Athletics"]
+    },
     {
       name: "Dexterity",
       level: 17,
@@ -88,3 +94,5 @@ export const Becky = {
     icon: ArmourClassIcon
   }
 };
+
+export default CharacterInfo;

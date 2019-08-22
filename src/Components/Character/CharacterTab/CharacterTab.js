@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
-import AbilityScores from "./Ability Scores/AbilityScores";
-import Skills from "./Skills";
+import React, { useContext } from "react";
+import AbilityScores from "../Ability Scores/AbilityScores";
+import Skills from "../Skills";
 import { Label, Menu, Tab } from "semantic-ui-react";
-import { Becky } from "../Resource/becky";
+import { CharacterContext } from "../../../Store/Store";
 function CharacterTab({ stats }) {
-  const character = Becky;
+  const [character, setCharacter] = useContext(CharacterContext);
+
   //Attributes, Combat abilities, Civil Abilities, Talents, Tags
   const panes = [
     {

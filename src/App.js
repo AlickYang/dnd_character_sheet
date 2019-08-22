@@ -1,13 +1,12 @@
 import React from "react";
-// import "./App.css";
-import HeaderSem from "./Components/Layout/HeaderSem";
-// import Character from "./Components/Character/Character";
-import Character from "./Components/CharacterSem/Character";
-// import Character from "./Components/CharacterCSS/CharacterCSS";
+import Header from "./Components/Layout/Header";
+import Character from "./Components/Character/Character";
+import Store from "./Store";
+
 function App() {
   return (
     <div className="App">
-      <HeaderSem />
+      <Header />
       <div className="main-body">
         <Character />
       </div>

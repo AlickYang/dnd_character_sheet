@@ -1,25 +1,24 @@
-import React from "react";
-import HitPoints from "./CharacterStats/HitPoints";
+import React, { useContext } from "react";
+import HitPoints from "./HitPoints";
+import { CharacterContext } from "../../Store/Store";
+import { Container, Header } from "semantic-ui-react";
 
-function CharacterStats({ hp, ac }) {
-  const currentHealth = (hp.current / hp.max) * 100;
-  const percentage = currentHealth + "%";
+function CharacterStats() {
+  // const character = Becky;
+  const [character, setCharacter] = useContext(CharacterContext);
   return (
-    <div className="container">
-      <h3> Stats </h3>
+    <Container>
+      <Header ac="h3"> Stats </Header>
       <div>
         <HitPoints
-          ac={ac.amount}
-          percentage={percentage}
-          currentHealth={hp.current}
-          maxHP={hp.max}
+          ac={character.ac.amount}
+          currentHealth={character.hp.current}
+          maxHP={character.hp.max}
         />
       </div>
-      <h3> Skills </h3>
-      <div className="row">
-        <div className="col"> asddas </div>
-      </div>
-    </div>
+      <Header ac="h3"> Skills </Header>
+      <div className="row">Place Holder </div>
+    </Container>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Becky } from "../Resource/becky";
+import { Becky } from "../../Resource/becky";
 import { List, Header, Popup } from "semantic-ui-react";
 import React, { Fragment } from "react";
 
