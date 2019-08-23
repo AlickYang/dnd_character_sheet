@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Header, Icon, Grid, Segment, Container } from "semantic-ui-react";
-import CharacterTab from "./CharacterTab/CharacterTab";
+import CharacterTab from "./CharacterTab";
 import CharacterStats from "./CharacterStats";
 import { CharacterContext } from "../../Store/Store";
+
 function Character() {
   const [character, setCharacter] = useContext(CharacterContext);
 

@@ -1,9 +1,7 @@
-import { Becky } from "../../Resource/becky";
 import { List, Header, Popup } from "semantic-ui-react";
 import React, { Fragment } from "react";
 
-function Skills() {
-  const skills = Becky.skills;
+function Skills({ skills }) {
   const trigger = skills.proficient ? skills.name : skills.name;
 
   return (
@@ -16,15 +14,19 @@ function Skills() {
               {skill.proficient === true ? (
                 <List.Header>
                   <Popup
+                    wide="very"
                     content={skill.description}
-                    trigger={<p>{skill.name} (e)</p>}
+                    trigger={<span>{skill.name} (e)</span>}
+                    position="right center"
                   />
                 </List.Header>
               ) : (
                 <List.Header>
                   <Popup
+                    wide="very"
                     content={skill.description}
-                    trigger={<p>{skill.name}</p>}
+                    trigger={<span>{skill.name}</span>}
+                    position="right center"
                   />
                 </List.Header>
               )}

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import AbilityScores from "../Ability Scores/AbilityScores";
-import Skills from "../Skills";
+import AbilityScores from "./CharacterTab/Ability Scores/AbilityScores";
+
 import { Label, Menu, Tab } from "semantic-ui-react";
-import { CharacterContext } from "../../../Store/Store";
+import { CharacterContext } from "../../Store/Store";
 function CharacterTab({ stats }) {
   const [character, setCharacter] = useContext(CharacterContext);
 
@@ -17,15 +17,17 @@ function CharacterTab({ stats }) {
       )
     },
     {
-      menuItem: "Skills",
-      render: () => (
-        <Tab.Pane>
-          <Skills />
-        </Tab.Pane>
-      )
+      menuItem: "Rogue Table",
+      render: () => <Tab.Pane>Rogue Table</Tab.Pane>
     }
   ];
-  return <Tab color="grey" panes={panes} />;
+  return (
+    <Tab
+      menu={{ secondary: true, pointing: true }}
+      color="grey"
+      panes={panes}
+    />
+  );
 }
 
 export default CharacterTab;
